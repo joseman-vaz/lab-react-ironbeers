@@ -36,3 +36,63 @@
     transform: rotate(360deg);
   }
 }
+/* .beers_container {
+  display: flex;
+  flex-direction: row;
+} */
+.card {
+  width: 300px;
+}
+.card img {
+  margin: 0 auto;
+  max-width: 100px;
+  max-height: 50%;
+}
+
+.description,
+.food-pairing {
+  max-height: 80px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.home_menu {
+  display: flex;
+  flex-direction: column;
+  margin: 0 auto;
+  width: 430px;
+  height: 630px;
+}
+.home_menu img {
+  border-radius: 5px;
+  height: 200px;
+  flex-grow: 1;
+  object-fit: cover;
+  opacity: 0.8;
+  transition: height 0.5s ease, opacity 0.5s ease;
+  z-index: 1;
+}
+
+.home_menu .image-container {
+  position: relative;
+  display: inline-block;
+  overflow: hidden;
+}
+.home_menu img:hover {
+  cursor: crosshair;
+  height: 300px;
+  opacity: 1;
+  filter: contrast(120%);
+}
+
+.image-text {
+  position: absolute;
+  bottom: 10px;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: rgba(0, 0, 0, 0.7);
+  color: white;
+  padding: 8px 12px;
+  font-size: 14px;
+}
