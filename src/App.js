@@ -4,6 +4,7 @@ import { NewBeer } from "./pages/NewBeer";
 import { HomePage } from "./pages/HomePage";
 import { SingleBeer } from "./pages/SingleBeer";
 import { Routes, Route } from "react-router-dom";
+
 import axios from "axios";
 import "./App.css";
 import { useEffect, useState } from "react";
@@ -12,7 +13,6 @@ const apiURL = " https://ih-beers-api2.herokuapp.com/beers";
 function App() {
   const [beers, setBeers] = useState([]);
 
-  // Fetch beers data and update the state
   useEffect(() => {
     axios.get(apiURL).then((response) => {
       setBeers(response.data);

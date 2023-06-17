@@ -1,12 +1,19 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
+import { motion, useScroll, useSpring } from "framer-motion";
+import { Footer } from "./Footer";
 const apiURL = " https://ih-beers-api2.herokuapp.com/beers";
 
 export function BeersPage() {
   const [beers, setBeers] = useState([]);
   const [searchQuery, setSearchQuery] = useState("");
-
+  const { scrollYProgress } = useScroll();
+  const scaleX = useSpring(scrollYProgress, {
+    stiffness: 100,
+    damping: 30,
+    restDelta: 0.001,
+  });
   useEffect(() => {
     fetchBeers();
   }, []);
@@ -31,23 +38,33 @@ export function BeersPage() {
 
   return (
     <div>
+      <motion.div className="progress-bar" style={{ scaleX }} />
+      <nav className="navbar navbar-expand-lg navbar-light bg-light">
+        <Link to="/" className="navbar-brand">
+          BeerDream
+        </Link>
+        <div className="collapse navbar-collapse">
+          <form className="form-inline my-2 my-lg-0">
+            <input
+              className="form-control mr-sm-2"
+              type="search"
+              placeholder="Search beers"
+              value={searchQuery}
+              onChange={handleSearch}
+            />
+          </form>
+        </div>
+      </nav>
       <h1>All the beers</h1>
-      <Link to="/" className="btn btn-info mb-3">
-        Home
-      </Link>
-      <div className="mb-3">
-        <input
-          type="text"
-          placeholder="Search beers"
-          value={searchQuery}
-          onChange={handleSearch}
-        />
-      </div>
-      <div className="row">
+      <div className="row row-cols-1 row-cols-md-2 row-cols-lg-3">
         {beers.map((beer) => (
-          <div key={beer.id} className="col-sm-4">
-            <div className="card mb-4">
-              <img src={beer.image_url} alt="beer" className="card-img-top" />
+          <div key={beer.id} className="col mb-4">
+            <div className="card">
+              <img
+                src={beer.image_url}
+                alt="beer"
+                className="card-img-top mt-3"
+              />
               <div className="card-body">
                 <h5 className="card-title">{beer.name}</h5>
                 <h6 className="card-subtitle mb-2 text-muted">
@@ -62,6 +79,7 @@ export function BeersPage() {
           </div>
         ))}
       </div>
+      <Footer />
     </div>
   );
 }

@@ -1,5 +1,6 @@
 .App {
   text-align: center;
+  font-family: "Oswald", sans-serif;
 }
 
 .App-logo {
@@ -27,6 +28,10 @@
 .App-link {
   color: #61dafb;
 }
+.form_button {
+  color: black;
+  background-color: #61dafb;
+}
 
 @keyframes App-logo-spin {
   from {
@@ -42,46 +47,40 @@
 } */
 .card {
   width: 300px;
+  align-items: center;
 }
 .card img {
   margin: 0 auto;
   max-width: 100px;
   max-height: 50%;
 }
-
-.description,
-.food-pairing {
-  max-height: 80px;
-  overflow: hidden;
-  text-overflow: ellipsis;
-  white-space: nowrap;
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 15px;
 }
-
 .home_menu {
   display: flex;
-  flex-direction: column;
-  margin: 0 auto;
-  width: 430px;
-  height: 630px;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-top: 30px;
 }
 .home_menu img {
-  border-radius: 5px;
-  height: 200px;
+  width: 200px;
+  height: 430px;
   flex-grow: 1;
   object-fit: cover;
-  opacity: 0.8;
-  transition: height 0.5s ease, opacity 0.5s ease;
-  z-index: 1;
+  opacity: 0.7;
+  transition: 0.5s ease;
 }
 
 .home_menu .image-container {
   position: relative;
   display: inline-block;
-  overflow: hidden;
 }
 .home_menu img:hover {
   cursor: crosshair;
-  height: 300px;
+  width: 350px;
   opacity: 1;
   filter: contrast(120%);
 }
@@ -95,4 +94,33 @@
   color: white;
   padding: 8px 12px;
   font-size: 14px;
+}
+.progress-bar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 10px;
+  background: #39de93;
+  transform-origin: 0%;
+  z-index: 1;
+}
+
+.form.container {
+  width: 600px;
+  margin: 30px auto;
+}
+
+.details.card {
+  flex-direction: row;
+  width: 600px;
+}
+
+.single_beer_info {
+  text-align: left;
+  margin: 10px;
+}
+
+.navbar-brand {
+  padding-left: 10px;
 }

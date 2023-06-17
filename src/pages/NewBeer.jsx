@@ -37,11 +37,11 @@ export function NewBeer() {
   };
 
   return (
-    <div>
+    <div className="form container">
+      <h1>Create a New Beer</h1>
       <Link to="/" className="btn btn-info mb-3">
         Home
       </Link>
-      <h1>Create a New Beer</h1>
       <form onSubmit={handleSubmit}>
         <div className="mb-3">
           <label htmlFor="name" className="form-label">
@@ -134,7 +134,7 @@ export function NewBeer() {
             onChange={handleInputChange}
           />
         </div>
-        <button type="submit" className="btn btn-primary">
+        <button type="submit" className="form_button btn btn-primary">
           Create Beer
         </button>
       </form>
