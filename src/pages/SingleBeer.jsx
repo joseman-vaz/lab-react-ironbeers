@@ -1,5 +1,6 @@
 import { useParams, Link } from "react-router-dom";
 import { Footer } from "./Footer";
+import { motion } from "framer-motion";
 export function SingleBeer({ beers }) {
   const { _id } = useParams();
   const beer = beers.find((beer) => beer._id === _id);
@@ -8,7 +9,7 @@ export function SingleBeer({ beers }) {
   }
   return (
     <div
-      className="d-flex justify-content-center align-items-center"
+      className="singleBeer_Container d-flex justify-content-center align-items-center"
       style={{ height: "100vh", margin: "1rem" }}
     >
       <div className="details card m-3">
@@ -33,9 +34,20 @@ export function SingleBeer({ beers }) {
           <p className="mb-2">
             <strong>Contributed by:</strong> {beer.contributed_by}
           </p>
-          <Link to="/beers" className="btn btn-info mb-3">
-            Go Back
-          </Link>
+          <motion.div
+            className="container"
+            whileHover={{ scale: 1.2, rotate: -8 }}
+            whileTap={{ scale: 0.8, rotate: -90, borderRadius: "100%" }}
+            style={{
+              display: "flex",
+              justifyContent: "center",
+              alignItems: "center",
+            }}
+          >
+            <Link to="/beers" className="btn btn-info mb-3">
+              Go Back
+            </Link>
+          </motion.div>
         </div>
       </div>
       <Footer />

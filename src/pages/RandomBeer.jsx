@@ -19,7 +19,7 @@ export function RandomBeer() {
 
   return (
     <div
-      className="d-flex justify-content-center align-items-center"
+      className="randomBeer_contianer d-flex justify-content-center align-items-center"
       style={{ height: "100vh", margin: "1rem" }}
     >
       <div className="details card m-3">

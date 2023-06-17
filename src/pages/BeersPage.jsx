@@ -72,9 +72,20 @@ export function BeersPage() {
                 </h6>
                 <p>Contributed by {beer.contributed_by}</p>
               </div>
-              <Link to={`/${beer._id}`} className="btn btn-info mb-3">
-                See details
-              </Link>
+              <motion.div
+                className="container"
+                whileHover={{ scale: 1.2, rotate: 10 }}
+                whileTap={{ scale: 0.8, rotate: -90, borderRadius: "100%" }}
+                style={{
+                  display: "flex",
+                  justifyContent: "center",
+                  alignItems: "center",
+                }}
+              >
+                <Link to={`/${beer._id}`} className="btn btn-info mb-3">
+                  See details
+                </Link>
+              </motion.div>
             </div>
           </div>
         ))}

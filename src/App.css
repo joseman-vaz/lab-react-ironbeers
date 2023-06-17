@@ -113,7 +113,7 @@
 
 .details.card {
   flex-direction: row;
-  width: 600px;
+  width: 800px;
 }
 
 .single_beer_info {
@@ -124,3 +124,10 @@
 .navbar-brand {
   padding-left: 10px;
 }
+
+/* ///RandomBeer/// */
+/* .randomBeer_contianer,
+.singleBeer_Container {
+  flex-direction: column;
+  width: fit-content;
+} */
