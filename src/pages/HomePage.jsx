@@ -11,6 +11,30 @@ export function HomePage() {
         <Link to="/" className="navbar-brand">
           BeerDream
         </Link>
+        <div className="collapse navbar-collapse">
+          <ul className="navbar-nav ml-auto">
+            <li className="nav-item">
+              <Link to="/" className="nav-link">
+                Home
+              </Link>
+            </li>
+            <li className="nav-item">
+              <Link to="/beers" className="nav-link">
+                Beers
+              </Link>
+            </li>
+            <li className="nav-item">
+              <Link to="/new-beer" className="nav-link">
+                Add New Beer
+              </Link>
+            </li>
+            <li className="nav-item">
+              <Link to="/beers/random" className="nav-link">
+                Random Beer
+              </Link>
+            </li>
+          </ul>
+        </div>
       </nav>
       <div className="container">
         <h1 className="h1">Welcome to my beer dream!</h1>

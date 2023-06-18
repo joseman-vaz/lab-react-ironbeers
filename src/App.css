@@ -124,10 +124,21 @@
 .navbar-brand {
   padding-left: 10px;
 }
+.beer-container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+  justify-items: center;
+}
 
-/* ///RandomBeer/// */
-/* .randomBeer_contianer,
-.singleBeer_Container {
-  flex-direction: column;
-  width: fit-content;
-} */
+@media (min-width: 576px) {
+  .beer-container {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: 992px) {
+  .beer-container {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}

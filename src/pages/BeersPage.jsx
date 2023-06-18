@@ -44,19 +44,43 @@ export function BeersPage() {
           BeerDream
         </Link>
         <div className="collapse navbar-collapse">
-          <form className="form-inline my-2 my-lg-0">
-            <input
-              className="form-control mr-sm-2"
-              type="search"
-              placeholder="Search beers"
-              value={searchQuery}
-              onChange={handleSearch}
-            />
-          </form>
+          <ul className="navbar-nav ml-auto">
+            <li className="nav-item">
+              <Link to="/" className="nav-link">
+                Home
+              </Link>
+            </li>
+            <li className="nav-item">
+              <Link to="/beers" className="nav-link">
+                Beers
+              </Link>
+            </li>
+            <li className="nav-item">
+              <Link to="/new-beer" className="nav-link">
+                Add New Beer
+              </Link>
+            </li>
+            <li className="nav-item">
+              <Link to="/beers/random" className="nav-link">
+                Random Beer
+              </Link>
+            </li>
+          </ul>
+          <div className="collapse navbar-collapse">
+            <form className="form-inline my-2 my-lg-0">
+              <input
+                className="form-control mr-sm-2"
+                type="search"
+                placeholder="Search beers"
+                value={searchQuery}
+                onChange={handleSearch}
+              />
+            </form>
+          </div>
         </div>
       </nav>
       <h1>All the beers</h1>
-      <div className="row row-cols-1 row-cols-md-2 row-cols-lg-3">
+      <div className="beer-container">
         {beers.map((beer) => (
           <div key={beer.id} className="col mb-4">
             <div className="card">
